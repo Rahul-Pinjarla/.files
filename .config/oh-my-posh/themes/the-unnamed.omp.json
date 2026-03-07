@@ -1,0 +1,76 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "upgrade": {
+    "source": "cdn",
+    "interval": "168h",
+    "auto": false,
+    "notice": false
+  },
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "options": {
+            "style": "folder"
+          },
+          "template": "{{ .Path }} ",
+          "foreground": "#15C2CB",
+          "type": "path",
+          "style": "plain"
+        },
+        {
+          "options": {
+            "branch_icon": "\ue0a0 "
+          },
+          "template": "<#F3EFF5>on</> {{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }} ",
+          "foreground": "#db6d28", // #F141A8
+          "type": "git",
+          "style": "plain"
+        },
+        {
+          "template": "{{if .Version}}<#F3EFF5>is</> \uf487 {{.Version}} {{end}}",
+          "foreground": "#5EADF2",
+          "type": "project",
+          "style": "plain"
+        },
+        {
+          "options": {
+            "fetch_version": true
+          },
+          "template": "<#F3EFF5>via</> \ue718 {{ .Full }} ",
+          "foreground": "#44FFD2",
+          "type": "node",
+          "style": "plain"
+        },
+        {
+          "template": "<#F3EFF5>and</> \ue71e {{.Full}} ",
+          "foreground": "#FE4A49",
+          "type": "npm",
+          "style": "plain"
+        },
+        {
+          "type": "python",
+          "style": "plain",
+          "foreground": "#3776AB",
+          "template": "{{ if .Error }}{{ else }}\ue606 {{ .Full }}{{ if .Venv }} <#FFE052>({{ .Venv }})</>{{ end }}{{ end }}"
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "template": "❯ ",
+          "foreground": "#FFE45E",
+          "type": "text",
+          "style": "plain"
+        }
+      ],
+      "newline": true
+    }
+  ],
+  "version": 4
+}

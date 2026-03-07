@@ -1,0 +1,21 @@
+# Background & Blur (Adjust opacity to your liking)
+background-opacity = 0.85
+background-blur-radius = 20
+
+# The "Border" effect
+# This adds empty space around the terminal content where the wallpaper shows through
+window-padding-x = 20
+window-padding-y = 20
+window-padding-color = extend
+
+# Hide the title bar for a seamless look
+macos-titlebar-style = hidden
+
+# This adds a 5px gap between native Ghostty splits
+window-padding-x = 5
+window-padding-y = 5
+# This ensures that when you split the screen, the gap remains
+window-padding-balance = true
+
+
+font-family = "JetBrainsMonoNL Nerd Font Mono"
