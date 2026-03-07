@@ -55,3 +55,5 @@ end
 
 # --- Go tooling path (optional, only if you use Go) ---
 # fish_add_path (go env GOPATH)/bin
+
+fzf_configure_bindings --directory=\cF --git_status=\cG --history=\cR
