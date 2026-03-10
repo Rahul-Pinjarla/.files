@@ -25,3 +25,15 @@ vim.keymap.set("n", "<leader>do", dap.step_over)
 vim.keymap.set("n", "<leader>dO", dap.step_out)
 vim.keymap.set("n", "<leader>dr", dap.repl.open)
 vim.keymap.set("n", "<leader>du", dapui.toggle)
+
+--
+pcall(vim.keymap.del, "n", "<C-h>")
+pcall(vim.keymap.del, "n", "<C-j>")
+pcall(vim.keymap.del, "n", "<C-k>")
+pcall(vim.keymap.del, "n", "<C-l>")
+
+vim.keymap.set("n", '<C-k>', ':TmuxNavigateUp<CR>')
+vim.keymap.set("n", '<C-j>', ':TmuxNavigateDown<CR>')
+vim.keymap.set("n", '<C-h>', ':TmuxNavigateLeft<CR>')
+vim.keymap.set("n", '<C-l>', ':TmuxNavigateRight<CR>')
+
