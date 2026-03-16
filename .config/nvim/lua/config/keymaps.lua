@@ -37,3 +37,6 @@ vim.keymap.set("n", '<C-j>', ':TmuxNavigateDown<CR>')
 vim.keymap.set("n", '<C-h>', ':TmuxNavigateLeft<CR>')
 vim.keymap.set("n", '<C-l>', ':TmuxNavigateRight<CR>')
 
+vim.keymap.set("v", "<leader>sr", [[:s/]], { desc = "Substitute in selection" })
+vim.keymap.set("v", "<leader>ss", [[:s/^]], { desc = "Substitute in selection start" })
+
