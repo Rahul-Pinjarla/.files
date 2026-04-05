@@ -110,3 +110,5 @@ alias tma0='tma 0'
 alias tms='tm switch-client -t'
 alias tms0='tms 0'
 alias ompt='omp-theme'
+mkdir -p ~/.tmux/sockets
+export TMUX_TMPDIR=~/.tmux/sockets
