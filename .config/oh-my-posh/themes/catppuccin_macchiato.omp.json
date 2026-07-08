@@ -60,6 +60,78 @@
           "style": "plain"
         },
         {
+          "type": "python",
+          "style": "plain",
+          "foreground": "#FFD43B",
+          "template": "\ue235 {{ .Full }} "
+        },
+        {
+          "type": "node",
+          "style": "plain",
+          "foreground": "#6CA35E",
+          "template": "\ue718 {{ .Full }} "
+        },
+        {
+          "type": "go",
+          "style": "plain",
+          "foreground": "#00ACD7",
+          "template": "\ue627 {{ .Full }} "
+        },
+        {
+          "type": "rust",
+          "style": "plain",
+          "foreground": "#DEA584",
+          "template": "\ue7a8 {{ .Full }} "
+        },
+        {
+          "type": "java",
+          "style": "plain",
+          "foreground": "#ED8B00",
+          "template": "\ue256 {{ .Full }} "
+        },
+        {
+          "type": "ruby",
+          "style": "plain",
+          "foreground": "#CC342D",
+          "template": "\ue791 {{ .Full }} "
+        },
+        {
+          "type": "docker",
+          "style": "plain",
+          "foreground": "#2496ED",
+          "template": "\uf308 {{ .Context }} "
+        },
+        {
+          "type": "dotnet",
+          "style": "plain",
+          "foreground": "#512BD4",
+          "template": "\ue77f {{ .Full }} "
+        },
+        {
+          "type": "lua",
+          "style": "plain",
+          "foreground": "#000080",
+          "template": "\ue620 {{ .Full }} "
+        },
+        {
+          "type": "php",
+          "style": "plain",
+          "foreground": "#777BB4",
+          "template": "\ue608 {{ .Full }} "
+        },
+        {
+          "type": "terraform",
+          "style": "plain",
+          "foreground": "#7B42BC",
+          "template": "\udb84\udc62 {{ .Version }} "
+        },
+        {
+          "type": "kubectl",
+          "style": "plain",
+          "foreground": "#326CE5",
+          "template": "\udb84\udcfe {{ .Context }}{{ if .Namespace }}/{{ .Namespace }}{{ end }} "
+        },
+        {
           "template": "\uf105",
           "foreground": "p:closer",
           "type": "text",

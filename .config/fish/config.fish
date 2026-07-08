@@ -1,32 +1,16 @@
 
-# exports
-export LIBRARY_PATH=/usr/local/Cellar/gsl/1.16/lib/
-export PATH="/opt/homebrew/bin/:$PATH"
-export PATH="/Library/PostgreSQL/15/bin:$PATH"
-export JAVA_HOME=$(/usr/libexec/java_home -v 17)
-export NODE_OPTIONS=''
-export PATH="$PATH:$(yarn global bin)"
-
+# --- PATH ---
+fish_add_path ~/.local/bin
 
 if status is-interactive
-    # Commands to run in interactive sessions can go here
     oh-my-posh init fish --config ~/.config/oh-my-posh/current.omp.json | source
 end
 
 set fish_greeting "Hola!! :)"
 
-# Setting PATH for Python 3.10
-# The original version is saved in /Users/rahulpinjarla/.config/fish/config.fish.pysave
-set -x PATH "/Library/Frameworks/Python.framework/Versions/3.10/bin" "$PATH"
-
 # --- defaults ---
 set -gx EDITOR nvim
 set -gx VISUAL nvim
-
-# --- starship prompt ---
-#if type -q starship
-#  starship init fish | source
-#end
 
 # --- zoxide (smart cd) ---
 if type -q zoxide
@@ -38,13 +22,9 @@ if type -q direnv
     direnv hook fish | source
 end
 
-# --- fzf integration ---
-# Newer fzf versions:
-if type -q fzf
-    fzf --fish | source
-end
+# --- fzf integration (handled by fzf.fish Fisher plugin) ---
 
-# --- helpful aliases (optional) ---
+# --- helpful aliases ---
 if type -q nvim
     alias v="nvim"
 end
@@ -63,17 +43,11 @@ if type -q rg
     alias grep="rg"
 end
 
-# --- Go tooling path (optional, only if you use Go) ---
-# fish_add_path (go env GOPATH)/bin
+if type -q fzf_configure_bindings
+    fzf_configure_bindings --directory=\cF --git_log=\cL --git_status=\cS --history=\cR --processes=\cP --variables=\cV
+end
 
-fzf_configure_bindings --directory=\cF --git_log=\cL --git_status=\cS --history=\cR --processes=\cP --variables=\cV
-
-# OpenClaw Completion
-source "/Users/rahulpinjarla/.openclaw/completions/openclaw.fish"
-
-
-# aliases
-alias nvim="/opt/homebrew/bin/nvim"
+# --- git aliases ---
 alias dmts="git checkout staging && git pull origin staging && git pull origin main && git push && git checkout main"
 alias dmtp="git checkout production && git pull origin production && git pull origin main && git push origin production && git checkout main"
 alias dpftp="git checkout production && git pull origin prod-fixes && git pull origin prod-fixes && git push origin production && git checkout main"
@@ -102,7 +76,6 @@ alias pm='python manage.py'
 alias pmmm='pm makemigrations'
 alias pmm='pm migrate'
 alias cl='clear'
-alias pxy='ssh -D 9000 -i ~/Documents/pyjamahr-production-shareable.pem pyjamahr-production@57.159.24.29'
 alias tm=tmux
 alias tml='tm ls'
 alias tma='tm attach -t'
@@ -110,5 +83,7 @@ alias tma0='tma 0'
 alias tms='tm switch-client -t'
 alias tms0='tms 0'
 alias ompt='omp-theme'
+alias pclaude="claude"
+alias rlclaude="CLAUDE_CONFIG_DIR=~/.claude-rl claude"
 mkdir -p ~/.tmux/sockets
-export TMUX_TMPDIR=~/.tmux/sockets
+set -gx TMUX_TMPDIR ~/.tmux/sockets
