@@ -3,8 +3,12 @@
 fish_add_path ~/.local/bin
 
 if status is-interactive
-    oh-my-posh init fish --config ~/.config/oh-my-posh/current.omp.json | source
+    oh-my-posh init fish --config (omp-random-theme) | source
 end
+
+# random eza directory color each session
+set -l eza_dir_hues 39 45 51 75 99 111 118 141 147 156 173 183 208 214 225
+set -gx EZA_COLORS "di=1;38;5;"(random choice $eza_dir_hues)
 
 set fish_greeting "Hola!! :)"
 

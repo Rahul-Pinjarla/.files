@@ -1,6 +1,7 @@
 {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
   "palette": {
+    "accent": "__ACCENT__",
     "blue": "#8AADF4",
     "closer": "p:os",
     "lavender": "#B7BDF8",
@@ -20,13 +21,13 @@
       "segments": [
         {
           "template": "{{.Icon}} ",
-          "foreground": "p:os",
+          "foreground": "p:accent",
           "type": "os",
           "style": "plain"
         },
         {
           "template": "{{ .UserName }}@{{ .HostName }} ",
-          "foreground": "p:blue",
+          "foreground": "p:accent",
           "type": "session",
           "style": "plain"
         },
@@ -37,7 +38,7 @@
             "style": "agnoster_short"
           },
           "template": "{{ .Path }} ",
-          "foreground": "p:pink",
+          "foreground": "p:accent",
           "type": "path",
           "style": "plain"
         },
